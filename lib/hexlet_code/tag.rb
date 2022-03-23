@@ -13,7 +13,7 @@ module HexletCode
       private
 
       def build_single_tag(tag, attrs)
-        "<#{tag} #{build_attrs(attrs)}>"
+        "<#{tag}#{build_attrs(attrs)}>"
       end
 
       def build_paired_tag(tag, attrs)
@@ -22,8 +22,8 @@ module HexletCode
 
       def build_attrs(attrs)
         attrs
-          .map { |attr, value| "#{attr}=\"#{value}\"" }
-          .join(" ")
+          .map { |attr, value| " #{attr}=\"#{value}\"" }
+          .join
       end
     end
   end
