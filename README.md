@@ -8,6 +8,20 @@
 
 Form generator
 
+```ruby
+HexletCode.form_for @user, url: '/users' do |f|
+      f.input :name, class: 'user-input'
+      f.input :job, as: :text, rows: 50, cols: 50
+      f.submit 'Save me'
+end
+
+# <form action="/users" method="post">
+# <input name="name" type="text" value="Tom" class="user-input">
+# <textarea cols="50" name="job" rows="50">project manager</textarea>
+# <input type="submit" value="WoW">
+# </form>
+```
+
 ## Installation
 
 Add this line to your application's Gemfile:
