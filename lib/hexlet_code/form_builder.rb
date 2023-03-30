@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'active_support/inflector'
+require 'active_support/all'
 
 module HexletCode
   autoload :Form, 'hexlet_code/tags/form'
