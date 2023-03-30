@@ -3,9 +3,13 @@
 require_relative 'hexlet_code/version'
 
 module HexletCode
-  class Error < StandardError; end
+  autoload :FormBuilder, 'hexlet_code/form_builder'
+  autoload :HtmlRenderer, 'hexlet_code/html_renderer'
 
-  def self.form_for
-    '<form action="#" method="post"></form>'
+  def self.form_for(obj, url: '#')
+    builder = FormBuilder.new obj, url
+    yield builder if block_given?
+
+    HtmlRenderer.render builder.form
   end
 end
