@@ -20,7 +20,7 @@ module HexletCode
     end
 
     def submit(value = :Save)
-      @nested_tags << Input.new({ type: :submit, value: })
+      @nested_tags << Input.new({ type: :submit, value: value })
     end
 
     def input(field_name, as: :input, **attrs)
@@ -31,7 +31,7 @@ module HexletCode
       @nested_tags << Label.new(field_name.to_s.classify, { for: field_name })
       input_class = "HexletCode::#{as.to_s.classify}".constantize
       @nested_tags << if SINGLE_TAGS.include? as
-                        input_class.new merged_attrs.merge({ value: })
+                        input_class.new merged_attrs.merge({ value: value })
                       else
                         input_class.new value, merged_attrs
                       end
