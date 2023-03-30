@@ -13,10 +13,10 @@ module HexletCode
 
     attr_accessor :form
 
-    def initialize(obj, url)
+    def initialize(obj, url, **attrs)
       @obj = obj
       @nested_tags = []
-      @form = Form.new(@nested_tags, { action: url })
+      @form = Form.new(@nested_tags, attrs.merge({ action: url }))
     end
 
     def submit(value = :Save)
