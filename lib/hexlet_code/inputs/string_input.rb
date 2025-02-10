@@ -7,7 +7,7 @@ module HexletCode
 
       def initialize(attrs)
         string_attrs = { name: attrs[:field_name], type: :text, tag_name: TAG_NAME, tag_type: :single }
-        super string_attrs.merge attrs
+        super string_attrs.merge(attrs)
       end
     end
   end
