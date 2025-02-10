@@ -9,7 +9,7 @@ module HexletCode
 
       def initialize(attrs)
         text_attrs = { cols: COLS, name: attrs[:field_name], rows: ROWS, tag_name: TAG_NAME, tag_type: :paired }
-        super text_attrs.merge(attrs)
+        super(text_attrs.merge(attrs))
       end
     end
   end
